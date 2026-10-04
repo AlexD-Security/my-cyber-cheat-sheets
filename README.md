@@ -20,22 +20,10 @@ traceroute <TARGET_IP>
 ## 📡 Nmap (Network Scanning)
 Basic network scanning commands learned in TryHackMe.
 
-### NMAP BASICS :
-
-
-
 ### Service & Script Scan
 ```bash
 nmap -sV -sC <TARGET_IP>
 ```
-
-## 📂 Web Enumeration
-Tools for finding hidden directories.
-
-### Gobuster
-```bash
-gobuster dir -u http://<TARGET_IP> -w /usr/share/wordlists/dirb/common.txt
-
 Option	Explanation
 -sL	List scan – list targets without scanning
 Host Discovery	
@@ -64,3 +52,10 @@ Report
 -oX <filename>	XML output
 -oG <filename>	grep-able output
 -oA <basename>	Output in all major formats
+
+## 📂 Web Enumeration
+Tools for finding hidden directories.
+
+### Gobuster
+```bash
+gobuster dir -u http://<TARGET_IP> -w /usr/share/wordlists/dirb/common.txt
