@@ -19,7 +19,9 @@ traceroute <TARGET_IP>
 
 ## 📡 Nmap (Network Scanning)
 Basic network scanning commands learned in TryHackMe.
+
 ### NMAP BASICS :
+
 Option	Explanation
 -sL	List scan – list targets without scanning
 Host Discovery	
