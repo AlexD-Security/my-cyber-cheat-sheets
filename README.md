@@ -52,6 +52,14 @@ nmap -sV -sC <TARGET_IP>
 * `-oG <filename>`: grep-able output
 * `-oA <basename>`: Output in all major formats
 
+### Hashcat Basic Syntax
+`hashcat -m <hash_type> -a <attack_mode> hashfile wordlist`
+
+* `-m <hash_type>`: Specifies the hash type in numeric format (e.g., `-m 1000` for NTLM). Check the official documentation (`man hashcat`) or the [example page](https://hashcat.net/wiki/doku.php?id=example_hashes) to find the specific code.
+* `-a <attack_mode>`: Specifies the attack mode (e.g., `-a 0` for a straight dictionary attack, trying one password from the wordlist after another).
+* `hashfile`: The file containing the hash you want to crack.
+* `wordlist`: The security wordlist you want to use in your attack.
+
 
 ## 📂 Web Enumeration
 Tools for finding hidden directories.
