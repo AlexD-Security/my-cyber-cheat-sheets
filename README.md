@@ -60,7 +60,7 @@ nmap -sV -sC <TARGET_IP>
 * `hashfile`: The file containing the hash you want to crack.
 * `wordlist`: The security wordlist you want to use in your attack.
 
-### JOHN THE RIPPER (Jumbo John) step by step hash cracking (with sha512 hashtype example) :
+### 🔓 JOHN THE RIPPER (Jumbo John) step by step hash cracking (with sha512 hashtype example) :
 * **Step 1: Identify the Hash Type**
   * Examine the prefix identifier of the target hash string.
   * If the hash begins with **`$6$`** (e.g., `$6$saltstring$hashed...`), it confirms a **SHA-512 Crypt** algorithm, typically found in Linux `/etc/shadow` files.
