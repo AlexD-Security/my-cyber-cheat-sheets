@@ -60,6 +60,29 @@ nmap -sV -sC <TARGET_IP>
 * `hashfile`: The file containing the hash you want to crack.
 * `wordlist`: The security wordlist you want to use in your attack.
 
+### JOHN THE RIPPER (Jumbo John) step by step hash cracking (with sha512 hashtype example) :
+* **Step 1: Identify the Hash Type**
+  * Examine the prefix identifier of the target hash string.
+  * If the hash begins with **`$6$`** (e.g., `$6$saltstring$hashed...`), it confirms a **SHA-512 Crypt** algorithm, typically found in Linux `/etc/shadow` files.
+
+* **Step 2: Create the Hash File Directly**
+  * Skip text editors entirely by writing the hash straight to a file using `echo`:
+    ```bash
+    echo '$6$saltstring$hashedpassword...' > hash.txt
+    ```
+  * *Note: Always wrap the hash in single quotes (`'`) so the Linux shell does not misinterpret the `$` characters as system variables.*
+
+* **Step 3: Execute John the Ripper**
+  * Launch the attack by forcing the correct format to bypass auto-detection and optimize performance:
+    ```bash
+    john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+    ```
+
+* **Step 4: View the Cracked Passwords**
+  * Check your results cleanly at any time during or after the session:
+    ```bash
+    john --show --format=sha512crypt hash.txt
+
 
 ## 📂 Web Enumeration
 Tools for finding hidden directories.
