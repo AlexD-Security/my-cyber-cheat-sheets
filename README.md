@@ -83,6 +83,43 @@ nmap -sV -sC <TARGET_IP>
     ```bash
     john --show --format=sha512crypt hash.txt
 
+# 🌐 Network Reconnaissance & DNS Lookup Notes
+
+## WHOIS Lookup
+
+```bash
+whois tryhackme.com
+```
+## DNS Lookups (dig - Recommended)
+Using `dig` is the modern and recommended approach for querying DNS name servers.
+### A Records
+```bash
+dig tryhackme.com A
+```
+### MX Records (At Specific Server)
+Query the mail exchange records using a specific DNS server (e.g., Cloudflare's `1.1.1.1`).
+```bash
+dig @1.1.1.1 tryhackme.com MX
+```
+### TXT Records
+```bash
+dig tryhackme.com TXT
+```
+## DNS Lookups (nslookup - Legacy)
+Older legacy alternative methods using `nslookup`.
+### A Records
+```bash
+nslookup -type=A trytryhackme.com
+```
+### MX Records (At Specific Server)
+```bash
+nslookup -type=MX tryhackme.com 1.1.1.1
+```
+### TXT Records
+```bash
+nslookup -type=TXT tryhackme.com
+```
+
 
 ## 📂 Web Enumeration
 Tools for finding hidden directories.
